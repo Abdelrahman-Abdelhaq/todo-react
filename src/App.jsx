@@ -18,6 +18,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('all');
   const [theme,setTheme] = useState('light');
+  const [isLoading,setIsLoading] = useState(false);
 
   const normalizedSearch = searchTerm.toLowerCase();
   
@@ -34,7 +35,7 @@ const filteredNotes = searchNotes.filter((note) => {
 
 
   useEffect(() => {
-    fetchNotes(setNotes);
+    fetchNotes(setNotes,setIsLoading);
   }, []);
 
  const handleAddNote = async () => {
@@ -116,7 +117,7 @@ const handleUpdateNote = (updatedNote) => {
       </div>
 
    <div className="all-notes" id="all-notes">
-  {filteredNotes.length === 0 ? (
+  { isLoading ? null : filteredNotes.length === 0 ? (
     <div className="empty-state">
       <div className="empty-pic"></div>
       <div className="empty-text">Empty</div>
