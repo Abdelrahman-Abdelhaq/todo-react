@@ -573,6 +573,9 @@ body{
     margin-bottom: 0px;
 }
 
-.loader{
-    text-align: center;
+.loading{
+    width: 112px;
+    height: 90px;
+    margin-top: 300px;
+    margin-left: 200px;
 }
