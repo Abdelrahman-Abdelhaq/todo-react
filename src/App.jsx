@@ -118,7 +118,7 @@ const handleUpdateNote = (updatedNote) => {
       </div>
 
    <div className="all-notes" id="all-notes">
-  { isLoading ? <FadeLoader loading={isLoading} color='6C63FF' className='loader'></FadeLoader> : filteredNotes.length === 0 ? (
+  { isLoading ? <FadeLoader loading={isLoading} color='#6C63FF' className='loader'></FadeLoader> : filteredNotes.length === 0 ? (
     <div className="empty-state">
       <div className="empty-pic"></div>
       <div className="empty-text">Empty</div>
