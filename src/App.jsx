@@ -7,6 +7,7 @@ import Filter from './components/Filter';
 import NewNoteButton from './components/NewNoteButton';
 import NewNoteModal from './components/NewNoteModal';
 import EditModal from './components/EditModal';
+import {FadeLoader} from "react-spinners";
 
 
 function App() {
@@ -117,7 +118,7 @@ const handleUpdateNote = (updatedNote) => {
       </div>
 
    <div className="all-notes" id="all-notes">
-  { isLoading ? null : filteredNotes.length === 0 ? (
+  { isLoading ? <FadeLoader loading={isLoading}></FadeLoader> : filteredNotes.length === 0 ? (
     <div className="empty-state">
       <div className="empty-pic"></div>
       <div className="empty-text">Empty</div>
