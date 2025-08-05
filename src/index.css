@@ -191,7 +191,7 @@ body{
     background-position: center;
     margin-right: 8px;
     cursor: pointer;
-    float: right;
+    position: fixed;
 }
 
 .note-button:hover {
@@ -316,11 +316,8 @@ body{
 
 .user-note {
     flex: 1;
-    /* ← makes it expand fully */
     min-width: 0;
-    /* ← prevents overflow issues */
     margin-right: 10px;
-    /* ← small gap before buttons */
     font-size: 20px;
     font-weight: bold;
     font-family: sans-serif;
@@ -577,4 +574,9 @@ body{
     height: 90px;
     margin-top: 250px;
     margin-left: 180px;
+}
+
+.note-margin{
+    display: inline;
+    margin-right: 692px;
 }

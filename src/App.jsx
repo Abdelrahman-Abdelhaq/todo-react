@@ -138,7 +138,7 @@ const handleUpdateNote = (updatedNote) => {
 </div>
 
 
-
+    <div className='note-margin'></div>
      <NewNoteButton openModal={openAddModal}/>
 
       <NewNoteModal isOpen={isAddModalOpen} 
