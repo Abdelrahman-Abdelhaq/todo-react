@@ -189,10 +189,9 @@ body{
     background-size: 24px 24px;
     background-repeat: no-repeat;
     background-position: center;
-    position: fixed;
-    right: 550px;   
-    bottom: 20px;
+    margin-right: 8px;
     cursor: pointer;
+    float: right;
 }
 
 .note-button:hover {
