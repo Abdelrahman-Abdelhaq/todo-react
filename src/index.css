@@ -69,7 +69,6 @@ body{
 
 .container {
     min-height: 100vh;
-    overflow: auto;
     width: 100%;
     background-color: var(--backGround);
     font-family: sans-serif;
@@ -306,7 +305,7 @@ body{
     height: 800px;
     box-sizing: border-box;
     margin-left: 115px;
-    overflow: auto;
+    overflow: scroll;
 }
 
 .note {
@@ -587,6 +586,7 @@ body{
     gap: 10px;
 }
 
+/* first device  , this is the normal one */
 @media screen and (max-width:753px) {
     .search{
         width: 350px;
@@ -611,7 +611,7 @@ body{
     }
 
     .all-notes{
-        height: 545px;
+        height: 380px;
         width: 400px;
         padding-left: 60px;
         overflow: auto;
@@ -627,7 +627,12 @@ body{
     }
    
 }
-@media screen and (max-width:360px) {   
+
+/* second device */
+@media screen and (max-width:435px ) and (max-height: 950px) {   
+    .content{
+        height: fit-content;
+    }
     .search{
         width: 320px;
         padding-left: 185px;
@@ -650,7 +655,7 @@ body{
     }
 
     .all-notes{
-        height: 545px;
+        height: 530px;
         width: 380px;
         padding-left: 80px;
     }
@@ -664,3 +669,91 @@ body{
     }
     
 }
+
+@media screen and (max-width:435px) and (max-height: 741px) {
+    .content {
+        height: fit-content;
+    }
+
+    .search {
+        width: 320px;
+        padding-left: 185px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .search-input {
+        width: 90%;
+
+    }
+
+    .column-div {
+        display: flex;
+        width: auto;
+        gap: 0;
+    }
+
+    .theme {
+        margin-left: 150px;
+        display: inline-block;
+    }
+
+    .all-notes {
+        height: 430px;
+        width: 380px;
+        padding-left: 80px;
+    }
+
+    .note-button {
+        position: relative;
+        margin-left: 450px;
+        bottom: -20px;
+        width: 38px;
+        height: 38px;
+    }
+
+}
+
+
+@media screen and (max-width:435px ) and (max-height: 668px) {   
+    .content{
+        height: fit-content;
+    }
+    .search{
+        width: 320px;
+        padding-left: 185px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .search-input{
+        width: 90%;
+
+    }
+    .column-div{
+        display: flex;
+        width: auto;
+        gap: 0;
+    }
+    .theme{
+        margin-left: 150px;
+        display: inline-block;
+    }
+
+    .all-notes{
+        height: 345px;
+        width: 380px;
+        padding-left: 80px;
+    }
+
+    .note-button{
+        position: relative;
+        margin-left: 450px;
+        bottom: -20px;
+        width: 38px;
+        height: 38px;
+    }
+    
+}
+
