@@ -192,6 +192,7 @@ body{
     margin-right: 8px;
     cursor: pointer;
     position: fixed;
+    bottom: 26px;
 }
 
 .note-button:hover {
