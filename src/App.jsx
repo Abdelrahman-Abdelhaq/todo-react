@@ -113,9 +113,9 @@ const handleUpdateNote = (updatedNote) => {
 
       <div className="search">
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <Filter setFilter={setFilter} />
-
-        <Theme themeState={themeHandler}/>
+      <div className='column-div'>
+        <Filter setFilter={setFilter} />
+        <Theme themeState={themeHandler}/></div>
       </div>
 
    <div className="all-notes" id="all-notes">

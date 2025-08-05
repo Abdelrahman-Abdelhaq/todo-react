@@ -70,7 +70,7 @@ body{
 .container {
     min-height: 100vh;
     overflow: auto;
-    width: 100vw;
+    width: 100%;
     background-color: var(--backGround);
     font-family: sans-serif;
     display: flex;
@@ -79,6 +79,8 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
+
+
 
 .content {
     position: relative;
@@ -100,6 +102,7 @@ body{
 }
 
 .search {
+    width: 750px;
     display: flex;
     gap: 16px;
     align-items: center;
@@ -178,6 +181,10 @@ body{
     color: var(--textColor);
 }
 
+.note-margin {
+    display: inline;
+    margin-right: 692px;
+}
 
 .note-button {
     border: none;
@@ -294,16 +301,10 @@ body{
 }
 
 .all-notes {
-    width: 520px;
+    width: 70%;
     height: 545px;
     box-sizing: border-box;
     margin-left: 115px;
-}
-
-.all-notes.show {
-    opacity: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .note {
@@ -577,7 +578,86 @@ body{
     margin-left: 180px;
 }
 
-.note-margin{
-    display: inline;
-    margin-right: 692px;
+.column-div{
+    width: 200px;
+    display: flex;
+    /* width: 100px; */
+    gap: 10px;
+}
+
+@media screen and (max-width:735px) {
+    .search{
+        width: 350px;
+        padding-left: 170px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .search-input{
+        width: 90%;
+
+    }
+    .column-div{
+        display: flex;
+        width: auto;
+        gap: 0;
+    }
+    .theme{
+        /* width: 10px; */
+        margin-left: 175px;
+        display: inline-block;
+    }
+
+    .all-notes{
+        width: 400px;
+        padding-left: 60px;
+    }
+
+    .note-button{
+        position: relative;
+        bottom: 630px;
+        right: 32%;
+        float: right;
+        width: 38px;
+        height: 38px;
+    }
+    
+}
+@media screen and (max-width:360px) {
+    .search{
+        width: 320px;
+        padding-left: 185px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .search-input{
+        width: 90%;
+
+    }
+    .column-div{
+        display: flex;
+        width: auto;
+        gap: 0;
+    }
+    .theme{
+        /* width: 10px; */
+        margin-left: 150px;
+        display: inline-block;
+    }
+
+    .all-notes{
+        width: 400px;
+        padding-left: 72px;
+    }
+
+    .note-button{
+        position: relative;
+        bottom: 630px;
+        right: 36%;
+        float: right;
+        width: 38px;
+        height: 38px;
+    }
+    
 }
