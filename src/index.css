@@ -78,6 +78,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 
@@ -305,6 +306,7 @@ body{
     height: 545px;
     box-sizing: border-box;
     margin-left: 115px;
+    overflow: auto;
 }
 
 .note {
@@ -585,7 +587,7 @@ body{
     gap: 10px;
 }
 
-@media screen and (max-width:735px) {
+@media screen and (max-width:753px) {
     .search{
         width: 350px;
         padding-left: 170px;
@@ -611,19 +613,20 @@ body{
     .all-notes{
         width: 400px;
         padding-left: 60px;
+        overflow: auto;
+
     }
 
     .note-button{
         position: relative;
-        bottom: 630px;
-        right: 32%;
-        float: right;
+        margin-left: 480px;
+        bottom: -20px;        
         width: 38px;
         height: 38px;
     }
-    
+   
 }
-@media screen and (max-width:360px) {
+@media screen and (max-width:360px) {   
     .search{
         width: 320px;
         padding-left: 185px;
@@ -641,21 +644,19 @@ body{
         gap: 0;
     }
     .theme{
-        /* width: 10px; */
         margin-left: 150px;
         display: inline-block;
     }
 
     .all-notes{
-        width: 400px;
-        padding-left: 72px;
+        width: 380px;
+        padding-left: 80px;
     }
 
     .note-button{
         position: relative;
-        bottom: 630px;
-        right: 36%;
-        float: right;
+        margin-left: 450px;
+        bottom: -20px;
         width: 38px;
         height: 38px;
     }
