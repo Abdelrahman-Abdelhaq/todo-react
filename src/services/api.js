@@ -1,7 +1,6 @@
 import axiosClient from './axiosClient.js';
 
-export const fetchNotes = async (setNotes,setIsLoading
-) => {
+export const fetchNotes = async (setNotes,setIsLoading,setIsEmpty) => {
   setIsLoading(true);
   try {
     const res = await axiosClient.get('/notes');
@@ -9,7 +8,8 @@ export const fetchNotes = async (setNotes,setIsLoading
   } catch (err) {
     console.error("Error fetching notes:", err);
   }
-  setIsLoading(false);
+  setIsLoading(false)
+  setIsEmpty(true)
 };
 
 export const addNote = async (noteText, setNotes) => {

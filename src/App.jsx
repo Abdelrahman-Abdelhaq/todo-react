@@ -9,6 +9,7 @@ import NewNoteModal from './components/NewNoteModal';
 import EditModal from './components/EditModal';
 import {FadeLoader} from "react-spinners";
 import Spinner from './components/Loading';
+import Empty from './components/Empty';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   const [filter, setFilter] = useState('all');
   const [theme,setTheme] = useState('light');
   const [isLoading,setIsLoading] = useState(false);
+  const [isEmpty,setIsEmpty] = useState(false);
 
   const normalizedSearch = searchTerm.toLowerCase();
   
@@ -37,7 +39,7 @@ const filteredNotes = searchNotes.filter((note) => {
 
 
   useEffect(() => {
-    fetchNotes(setNotes,setIsLoading);
+    fetchNotes(setNotes,setIsLoading,setIsEmpty);
   }, []);
 
  const handleAddNote = async () => {
@@ -60,12 +62,6 @@ const filteredNotes = searchNotes.filter((note) => {
     console.log('Updating with:', { note_text: note.note_text, completed: !note.completed });
 
   };
-
-  const handleEditNote = (note) => {
-    setEditNote(note);
-    setNewNoteText(note.note_text);
-  };
-
 
 const handleUpdateNote = (updatedNote) => {
   if (updatedNote.note_text.trim() !== '') {
@@ -107,9 +103,9 @@ const handleUpdateNote = (updatedNote) => {
   }
 
   return (
-    <div className='container' data-theme={theme}>
-      <div className="content">
-      <h1 className="title">TODO LIST</h1>
+  <div className='container' data-theme={theme}>
+   <div className="content">
+        <h1 className="title">TODO LIST</h1>
 
       <div className="search">
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
@@ -118,14 +114,15 @@ const handleUpdateNote = (updatedNote) => {
         <Theme themeState={themeHandler}/></div>
       </div>
 
-   <div className="all-notes" id="all-notes">
-  { isLoading ? <Spinner/> : filteredNotes.length === 0 ? (
-    <div className="empty-state">
-      <div className="empty-pic"></div>
-      <div className="empty-text">Empty</div>
-    </div>
-  ) : (
-    filteredNotes.map((note) => (
+    <div className="all-notes" id="all-notes">
+       { isLoading ? <Spinner/> : filteredNotes.length === 0 ? (
+    //   <div className="empty-state" >
+    //   <div className="empty-pic"></div>
+    //   <div className="empty-text">Empty</div>
+    //  </div>
+    <Empty isEmpty={isEmpty}/>
+          ) : (
+         filteredNotes.map((note) => (
       <Note
         key={note.id}
         note={note}
@@ -134,8 +131,8 @@ const handleUpdateNote = (updatedNote) => {
         onToggleComplete={handleToggleComplete}
       />
     ))
-  )}
-</div>
+      )}
+    </div>
 
 
     <div className='note-margin'></div>
@@ -153,7 +150,7 @@ const handleUpdateNote = (updatedNote) => {
        editNote={(updatedNote) => {handleUpdateNote(updatedNote);}}/>
 
   </div>
-  </div>
+</div>
 
   );
 }

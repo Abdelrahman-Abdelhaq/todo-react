@@ -23,24 +23,3 @@ function Note({ note, onDelete, onEdit, onToggleComplete }) {
 }
 
 export default Note;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
