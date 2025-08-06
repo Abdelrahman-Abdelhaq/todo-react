@@ -200,7 +200,7 @@ body{
     background-size: 24px 24px;
     background-repeat: no-repeat;
     background-position: center;
-    margin-right: 8px;
+    margin-left: 650px;
     cursor: pointer;
     position: fixed;
     bottom: 26px;
@@ -592,6 +592,29 @@ body{
     gap: 10px;
 }
 
+.undo-button{
+        border: none;
+        background-color: var(--buttonBackground);
+        background-image: url(assets/undo.svg);
+        width: 124px;
+        height: 40px;
+        border-radius: 4px;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        background-position: 90px;
+        margin-left: 50px;
+        cursor: pointer;
+        position: fixed;
+        bottom: 100px;
+        color: var(--buttonTextColor);
+        font-weight: bold;
+        font-family: sans-serif;
+}
+.undo-button:hover{
+background-color: var(--buttonHover);
+outline: 2px solid var(--buttonBackground);
+}
+
 /* first device  , this is the normal one */
 @media screen and (max-width:753px) {
     .search{
@@ -625,13 +648,18 @@ body{
     }
 
     .note-button{
-        position: relative;
-        margin-left: 480px;
-        bottom: -20px;        
+        position: fixed;
+        margin-left: 300px;
+        bottom: 20px;        
         width: 38px;
         height: 38px;
     }
-   
+   .undo-button{
+    width: 100px;
+    background-position: 74px;
+    background-size: 20px;
+    font-size: 12px;
+   }
 }
 
 /* second device */

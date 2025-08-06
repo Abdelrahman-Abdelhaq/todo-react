@@ -10,6 +10,7 @@ import EditModal from './components/EditModal';
 import {FadeLoader} from "react-spinners";
 import Spinner from './components/Loading';
 import Empty from './components/Empty';
+import Undo from "./components/Undo";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
   const [theme,setTheme] = useState('light');
   const [isLoading,setIsLoading] = useState(false);
   const [isEmpty,setIsEmpty] = useState(false);
+  const [isUndo,setIsUndo] = useState(false);
 
   const normalizedSearch = searchTerm.toLowerCase();
   
@@ -54,6 +56,10 @@ const filteredNotes = searchNotes.filter((note) => {
   }
 
   const handleDeleteNote = (id) => {
+    setIsUndo(true);
+    setTimeout(()=>{
+      setIsUndo(false);
+    },5000)
     deleteNote(id, setNotes);
   };
 
@@ -136,7 +142,6 @@ const handleUpdateNote = (updatedNote) => {
 
 
     <div className='note-margin'></div>
-     <NewNoteButton openModal={openAddModal}/>
 
       <NewNoteModal isOpen={isAddModalOpen} 
       closeModal={closeAddModal} 
@@ -149,7 +154,11 @@ const handleUpdateNote = (updatedNote) => {
        note={editNote}  
        editNote={(updatedNote) => {handleUpdateNote(updatedNote);}}/>
 
+
   </div>
+       <NewNoteButton openModal={openAddModal}/>
+       <Undo isUndo={isUndo}/>
+
 </div>
 
   );
