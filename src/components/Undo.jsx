@@ -1,9 +1,9 @@
 import React from "react";
 
-const Undo = ({isUndo})=>{
+const Undo = ({isUndo,handleUndo})=>{
     if(!isUndo) return null;
     return(
-        <button className="undo-button">Undo</button>
+        <button className="undo-button" onClick={handleUndo}>Undo</button>
     );
 }
 

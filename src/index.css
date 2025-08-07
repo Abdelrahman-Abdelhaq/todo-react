@@ -616,7 +616,7 @@ outline: 2px solid var(--buttonBackground);
 }
 
 /* first device  , this is the normal one */
-@media screen and (max-width:753px) {
+@media screen and (max-width:775px) {
     .search{
         width: 350px;
         padding-left: 170px;

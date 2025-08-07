@@ -23,14 +23,14 @@ export const addNote = async (noteText, setNotes) => {
   }
 };
 
-export const deleteNote = async (id, setNotes) => {
+export const deleteNote = async (id) => {
   try {
     await axiosClient.delete(`/notes/${id}`);
-    setNotes(prev => prev.filter(note => note.id !== id));
   } catch (err) {
     console.error("Error deleting note:", err);
   }
 };
+
 
 export const updateNote = async (id, updatedData, setNotes) => {
   try {
