@@ -609,12 +609,25 @@ body{
         color: var(--buttonTextColor);
         font-weight: bold;
         font-family: sans-serif;
-}
+        text-align: start;
+    }
+
 .undo-button:hover{
 background-color: var(--buttonHover);
 outline: 2px solid var(--buttonBackground);
 }
 
+.undo-counter{
+display: inline-block;
+font-weight: bold;
+padding-left: 4px;
+padding-right: 12px;
+}
+
+.undo-text{
+display: inline-block;
+font-weight: bold;
+}
 /* first device  , this is the normal one or default one , it is working flawlessly now */
 @media screen and (max-width:775px) {
     .search{

@@ -25,6 +25,8 @@ function App() {
   const [isUndo, setIsUndo] = useState(false);
   const [deletedNote, setDeletedNote] = useState(null);
   const deleteTimerRef = useRef(null);
+  const [counter,setCounter] = useState(5);
+
 
   const normalizedSearch = searchTerm.toLowerCase();
 
@@ -59,6 +61,16 @@ function App() {
     setNotes(prev => prev.filter(note => note.id !== id));
     setDeletedNote(noteToDelete);
     setIsUndo(true);
+
+    const intervalID = ()=>{
+          setInterval(()=>{setCounter(c => c-1)},1000)
+    }
+
+    if(counter>0){intervalID()}
+    if(counter<= 0){
+      clearInterval(intervalID);
+      setCounter(5);
+    }       
 
     deleteTimerRef.current = setTimeout(() => {
       if (noteToDelete) {
@@ -172,7 +184,7 @@ function App() {
       </div>
 
       <NewNoteButton openModal={openAddModal} />
-      <Undo isUndo={isUndo} handleUndo={handleUndo} />
+      <Undo isUndo={isUndo} handleUndo={handleUndo} counter={counter} />
     </div>
   );
 }
