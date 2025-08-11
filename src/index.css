@@ -589,7 +589,6 @@ body{
 .column-div{
     width: 200px;
     display: flex;
-    /* width: 100px; */
     gap: 10px;
 }
 
@@ -688,6 +687,12 @@ outline: 2px solid var(--buttonBackground);
        width: 70vw;
        margin-bottom: 90px;
    }
+    .loading {
+        width: 90px;
+        height: 70px;
+        margin-top: 220px;
+        margin-left: 130px;
+    }
 }
 
 /* second device or large ones*/
@@ -754,6 +759,12 @@ outline: 2px solid var(--buttonBackground);
     .edit-modal input {
         width: 70vw;
         margin-bottom: 90px;
+    }
+    .loading {
+        width: 90px;
+        height: 70px;
+        margin-top: 220px;
+        margin-left: 110px;
     }
     
 }
@@ -825,6 +836,12 @@ outline: 2px solid var(--buttonBackground);
         width: 70vw;
         margin-bottom: 90px;
     }
+    .loading {
+        width: 90px;
+        height: 70px;
+        margin-top: 220px;
+        margin-left: 110px;
+    }
 }
 
 /* small devices */
@@ -891,6 +908,13 @@ outline: 2px solid var(--buttonBackground);
     .edit-modal input {
         width: 70vw;
         margin-bottom: 90px;
+    }
+
+    .loading {
+    width: 90px;
+        height: 70px;
+        margin-top: 220px;
+        margin-left: 110px;
     }
     
 }
