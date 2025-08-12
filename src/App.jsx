@@ -25,7 +25,8 @@ function App() {
   const [isUndo, setIsUndo] = useState(false);
   const [deletedNote, setDeletedNote] = useState(null);
   const deleteTimerRef = useRef(null);
-  const [counter,setCounter] = useState(5);
+  const [counter,setCounter] = useState(0);
+  const [isInterval,setIsInterval] = useState(false);
 
 
   const normalizedSearch = searchTerm.toLowerCase();
@@ -44,6 +45,17 @@ function App() {
   useEffect(() => {
     fetchNotes(setNotes, setIsLoading, setIsEmpty);
   }, []);
+  useEffect(()=>{
+      if(!isUndo) return;
+      const interval = setInterval(()=>{
+        setCounter((prev)=>{
+          if(prev <=1)
+            {clearInterval(interval);
+          return 0;}
+          return prev-1;});
+      },1000);
+      return ()=>{clearInterval(interval);};
+    },[isUndo]);
 
   const handleAddNote = async () => {
     if (newNoteText.trim() === '') return;
@@ -61,16 +73,8 @@ function App() {
     setNotes(prev => prev.filter(note => note.id !== id));
     setDeletedNote(noteToDelete);
     setIsUndo(true);
-
-    const intervalID = ()=>{
-          setInterval(()=>{setCounter(c => c-1)},1000)
-    }
-
-    if(counter>0){intervalID()}
-    if(counter<= 0){
-      clearInterval(intervalID);
-      setCounter(5);
-    }       
+    setCounter(5);
+    
 
     deleteTimerRef.current = setTimeout(() => {
       if (noteToDelete) {
